@@ -60,6 +60,15 @@
   --transition-base: 0.25s ease;
   --transition-slow: 0.4s ease;
   --transition-spring: 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-emphasized: cubic-bezier(0.22, 1, 0.36, 1);
+
+  /* Motion */
+  --anim-caret: 0.75s;
+  --anim-enter: 0.9s;
+  --anim-bounce: 2.4s;
+  --anim-float: 5.6s;
+  --anim-loop: 4.8s;
+  --anim-loop-slow: 6s;
 
   /* Layout */
   --max-width: 1200px;

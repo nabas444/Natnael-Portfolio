@@ -1,112 +1,129 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
+import { FaLaptopCode, FaPaintBrush, FaServer, FaTools } from "react-icons/fa";
 import "../styles/about.css";
 
 const skills = [
   {
-    icon: "⚛️",
+    Icon: FaLaptopCode,
     title: "Frontend Development",
-    items: ["React", "TypeScript", "JavaScript ES6+", "HTML5", "CSS3/SASS", "Next.js"],
+    items: ["React", "TypeScript", "JavaScript", "HTML5", "CSS3/SASS", "Next.js"],
   },
   {
-    icon: "🎨",
+    Icon: FaPaintBrush,
     title: "UI/UX Design",
     items: ["Figma", "Responsive Design", "Design Systems", "Accessibility", "Animation", "Prototyping"],
   },
   {
-    icon: "🛠️",
+    Icon: FaTools,
     title: "Tools & DevOps",
     items: ["Git/GitHub", "Webpack/Vite", "Jest/Vitest", "CI/CD", "Docker", "VS Code"],
   },
   {
-    icon: "🗄️",
+    Icon: FaServer,
     title: "Backend & Database",
     items: ["Node.js", "Express", "MongoDB", "PostgreSQL", "REST APIs", "Firebase"],
   },
 ];
 
-const experience = [
-  {
-    date: "2023 — Present",
-    role: "Senior Frontend Developer",
-    company: "TechNova Inc.",
-    description:
-      "Leading frontend architecture for the company's flagship SaaS product. Reduced bundle size by 40% and improved Core Web Vitals scores.",
-  },
-  {
-    date: "2021 — 2023",
-    role: "Frontend Developer",
-    company: "DigitalCraft Studio",
-    description:
-      "Built responsive web applications for clients across e-commerce, fintech, and healthcare. Mentored 3 junior developers.",
-  },
-  {
-    date: "2020 — 2021",
-    role: "Junior Frontend Developer",
-    company: "WebFlow Agency",
-    description:
-      "Developed pixel-perfect UI components and collaborated with designers to implement dynamic web experiences.",
-  },
-];
-
-const education = [
-  {
-    degree: "B.S. Computer Science",
-    institution: "University of California, Berkeley",
-    year: "2016 — 2020",
-  },
-  {
-    degree: "Frontend Development Certificate",
-    institution: "Meta Professional Certificate",
-    year: "2021",
-  },
-];
-
 const About = () => {
+  const [visibleSections, setVisibleSections] = useState({
+    hero: false,
+    skills: false,
+    cta: false,
+  });
+
+  const heroRef = useRef(null);
+  const skillsRef = useRef(null);
+  const ctaRef = useRef(null);
+
+  useEffect(() => {
+    const sections = [
+      { key: "hero", ref: heroRef },
+      { key: "skills", ref: skillsRef },
+      { key: "cta", ref: ctaRef },
+    ];
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          const sectionKey = entry.target.getAttribute("data-section");
+          if (!sectionKey) return;
+          setVisibleSections((prev) => ({ ...prev, [sectionKey]: true }));
+          observer.unobserve(entry.target);
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    sections.forEach(({ key, ref }) => {
+      if (!ref.current) return;
+      ref.current.setAttribute("data-section", key);
+      observer.observe(ref.current);
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <main className="about-page">
-      {/* Hero */}
-      <section className="section" aria-label="About me">
+      <section
+        ref={heroRef}
+        className={`section about-reveal ${visibleSections.hero ? "is-visible" : ""}`}
+        aria-label="About me"
+      >
         <div className="container">
-          <div className="about-hero">
-            <div className="about-photo">
-              <img
-                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=530&fit=crop&crop=face"
-                alt="Alex Chen"
-              />
+          <div className="about-hero-shell">
+            <div className="about-photo-wrap">
+              <div className="about-photo">
+                <img
+                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&h=680&fit=crop&crop=face"
+                  alt="Natnael Abebe portrait"
+                />
+              </div>
             </div>
+
             <div className="about-info">
-              <h1>About Me</h1>
-              <p className="about-role">Frontend Developer & UI Engineer</p>
+              <p className="about-kicker">Who I Am</p>
+              <h1>Crafting Product-Ready Web Experiences</h1>
+              <p className="about-role">Fullstack Developer & UI Engineer</p>
               <div className="about-bio">
                 <p>
-                  I'm Alex Chen, a frontend developer based in San Francisco with
-                  a passion for creating beautiful, performant, and accessible web
-                  experiences. With over 4 years of professional experience, I
-                  specialize in React, TypeScript, and modern CSS.
+                  I am Natnael Abebe, a fullstack developer focused on building modern,
+                  responsive, and accessible web experiences with strong performance and clean architecture.
                 </p>
                 <p>
-                  My journey in web development started during college when I built
-                  my first website for a student organization. Since then, I've
-                  worked with startups and established companies, helping them bring
-                  their digital products to life.
-                </p>
-                <p>
-                  When I'm not coding, you'll find me exploring new coffee shops,
-                  contributing to open-source projects, or experimenting with
-                  creative coding and generative art.
+                  I combine React-driven frontend engineering with practical backend systems to ship products that
+                  look sharp, feel fast, and scale with real users.
                 </p>
               </div>
+
+              <div className="about-highlights">
+                <div className="about-highlight">
+                  <span className="value">10+</span>
+                  <span className="label">Projects Built</span>
+                </div>
+                <div className="about-highlight">
+                  <span className="value">24h</span>
+                  <span className="label">Avg Response</span>
+                </div>
+                <div className="about-highlight">
+                  <span className="value">100%</span>
+                  <span className="label">Commitment</span>
+                </div>
+              </div>
+
               <div className="about-download">
                 <a
                   href="#"
-                  className="btn btn-primary"
+                  className="btn about-cv-btn"
                   onClick={(event) => {
                     event.preventDefault();
-                    alert("CV download would be triggered here — connect a real PDF file to enable this.");
+                    alert("Connect your real CV PDF file URL here.");
                   }}
                 >
-                  📄 Download CV
+                  Download CV
                 </a>
               </div>
             </div>
@@ -114,17 +131,22 @@ const About = () => {
         </div>
       </section>
 
-      {/* Skills */}
-      <section className="skills-section section" aria-label="Skills">
+      <section
+        ref={skillsRef}
+        className={`skills-section section about-reveal ${visibleSections.skills ? "is-visible" : ""}`}
+        aria-label="Skills"
+      >
         <div className="container">
-          <div className="section-header">
+          <div className="section-header about-section-header">
             <h2>Skills & Expertise</h2>
-            <p>Technologies and tools I'm proficient in</p>
+            <p>Technologies and tools I use to design, build, and ship high-quality products.</p>
           </div>
           <div className="skills-grid">
             {skills.map((category) => (
-              <div className="skill-category" key={category.title}>
-                <div className="skill-category-icon">{category.icon}</div>
+              <article className="skill-category" key={category.title}>
+                <div className="skill-category-icon">
+                  <category.Icon />
+                </div>
                 <h3>{category.title}</h3>
                 <div className="skill-list">
                   {category.items.map((item) => (
@@ -133,64 +155,25 @@ const About = () => {
                     </span>
                   ))}
                 </div>
-              </div>
+              </article>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Experience */}
-      <section className="section" aria-label="Work experience">
+      <section
+        ref={ctaRef}
+        className={`section about-cta about-reveal ${visibleSections.cta ? "is-visible" : ""}`}
+        aria-label="Call to action"
+      >
         <div className="container">
-          <div className="section-header">
-            <h2>Work Experience</h2>
-            <p>My professional journey</p>
+          <div className="about-cta-panel">
+            <h2>Ready to Build Something Exceptional?</h2>
+            <p>I am open to freelance and full-time opportunities where design and engineering meet.</p>
+            <Link to="/contact" className="btn about-cta-btn">
+              Get In Touch
+            </Link>
           </div>
-          <div className="timeline">
-            {experience.map((item, index) => (
-              <div className="timeline-item" key={index}>
-                <div className="timeline-dot" />
-                <div className="timeline-date">{item.date}</div>
-                <div className="timeline-content">
-                  <h3>{item.role}</h3>
-                  <p className="company">{item.company}</p>
-                  <p>{item.description}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Education */}
-      <section className="section" style={{ background: "var(--color-surface)" }} aria-label="Education">
-        <div className="container">
-          <div className="section-header">
-            <h2>Education</h2>
-            <p>Academic background and certifications</p>
-          </div>
-          <div className="education-grid">
-            {education.map((item, index) => (
-              <div className="education-card" key={index}>
-                <h3>{item.degree}</h3>
-                <p className="institution">{item.institution}</p>
-                <p className="year">{item.year}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section className="section" style={{ textAlign: "center" }}>
-        <div className="container">
-          <h2>Interested in working together?</h2>
-          <p style={{ maxWidth: "500px", margin: "var(--space-lg) auto var(--space-2xl)" }}>
-            I'm always open to discussing new projects and opportunities.
-          </p>
-          <Link to="/contact" className="btn btn-primary">
-            Get In Touch →
-          </Link>
         </div>
       </section>
     </main>
@@ -198,4 +181,3 @@ const About = () => {
 };
 
 export default About;
-

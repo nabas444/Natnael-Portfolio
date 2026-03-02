@@ -39,7 +39,7 @@ const Navbar = ({ theme, onToggleTheme }) => {
       aria-label="Main navigation"
     >
       <div className="navbar-inner">
-        <Link to="/" className="navbar-logo" aria-label="Home">
+        <Link to="/" className="navbar-logo" aria-label="Home" onClick={() => setIsOpen(false)}>
           <span>&lt;</span>
           <span className="logo-accent">Nati</span>
           <span>Codes /&gt;</span>
@@ -52,12 +52,17 @@ const Navbar = ({ theme, onToggleTheme }) => {
                 key={link.path}
                 to={link.path}
                 className={location.pathname === link.path ? "active" : ""}
+                onClick={() => setIsOpen(false)}
               >
                 {link.label}
               </Link>
             ))}
             <div className="navbar-cta">
-              <Link to="/contact" className="btn btn-primary">
+              <Link
+                to="/contact"
+                className="btn navbar-hire-btn"
+                onClick={() => setIsOpen(false)}
+              >
                 Hire Me
               </Link>
             </div>
