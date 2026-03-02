@@ -25,13 +25,13 @@ const Home = () => {
             <div className="animate-fade-up">
               <div className="hero-greeting">Hi, my name is</div>
               <h1 className="hero-name">
-                 Natnael <span className="highlight">Abebe</span>
+                Natnael <span className="highlight">Abebe</span>
               </h1>
-              <p className="hero-title">Frontend Developer & UI Engineer</p>
+              <p className="hero-title">FullStack Developer</p>
               <p className="hero-description">
-                I build exceptional digital experiences that live at the intersection
-                of design and engineering. Specializing in React, TypeScript, and
-                modern web technologies.
+                I build exceptional digital experiences that live at the
+                intersection of design and engineering. Specializing in React,
+                Node, and modern web technologies.
               </p>
               <div className="hero-actions">
                 <Link to="/projects" className="btn btn-primary">
@@ -81,39 +81,29 @@ const Home = () => {
             <div className="about-preview-text">
               <h2>Crafting Digital Excellence</h2>
               <p>
-                With over 4 years of experience in frontend development, I've had
-                the privilege of working with startups and established companies to
-                bring their digital visions to life. I believe in writing clean,
-                maintainable code that creates exceptional user experiences.
+                As an aspiring frontend developer, I am eager to contribute to
+                innovative teams and help bring digital ideas to life. I focus
+                on writing clean, maintainable code and building responsive
+                interfaces that create engaging user experiences while
+                continuously growing my technical skills.
               </p>
               <p>
-                My approach combines technical expertise with a keen eye for design,
-                ensuring every project not only functions flawlessly but also
-                delights users at every interaction.
+                My approach combines technical expertise with a keen eye for
+                design, ensuring every project not only functions flawlessly but
+                also delights users at every interaction.
               </p>
-              <Link to="/about" className="btn btn-outline" style={{ marginTop: "8px" }}>
+              <Link
+                to="/about"
+                className="btn btn-outline"
+                style={{ marginTop: "8px" }}
+              >
                 Learn More About Me →
               </Link>
-
-              <div className="about-stats">
-                <div className="stat-item">
-                  <div className="stat-number">4+</div>
-                  <div className="stat-label">Years Experience</div>
-                </div>
-                <div className="stat-item">
-                  <div className="stat-number">30+</div>
-                  <div className="stat-label">Projects Built</div>
-                </div>
-                <div className="stat-item">
-                  <div className="stat-number">15+</div>
-                  <div className="stat-label">Happy Clients</div>
-                </div>
-              </div>
-            </div>
-
+</div>
             <div
               style={{
-                background: "linear-gradient(135deg, var(--color-primary-glow), rgba(6,182,212,0.08))",
+                background:
+                  "linear-gradient(135deg, var(--color-primary-glow), rgba(6,182,212,0.08))",
                 borderRadius: "var(--radius-lg)",
                 padding: "var(--space-3xl)",
                 display: "flex",
@@ -128,10 +118,10 @@ const Home = () => {
               }}
             >
               {`const developer = {
-  name: "Alex Chen",
-  role: "Frontend Developer",
-  skills: ["React", "TypeScript", "CSS"],
-  passion: "Building great UX",
+  name: "Natnael Abebe",
+  role: "FullStack Developer",
+  skills: ["React", "Node", "Express", "MySql", "CSS"],
+  passion: "Building great UIX",
   available: true
 };`}
             </div>

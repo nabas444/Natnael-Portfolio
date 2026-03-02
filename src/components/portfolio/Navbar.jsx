@@ -41,8 +41,8 @@ const Navbar = ({ theme, onToggleTheme }) => {
       <div className="navbar-inner">
         <Link to="/" className="navbar-logo" aria-label="Home">
           <span>&lt;</span>
-          <span className="logo-accent">Alex</span>
-          <span>Chen /&gt;</span>
+          <span className="logo-accent">Nati</span>
+          <span>Codes /&gt;</span>
         </Link>
 
         <div className={`navbar-menu ${isOpen ? "open" : ""}`}>
