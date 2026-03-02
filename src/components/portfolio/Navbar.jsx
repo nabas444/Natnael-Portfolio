@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
+import { FiMoon, FiSun } from "react-icons/fi";
 import "../../styles/navbar.css";
 
 const navLinks = [
@@ -9,7 +10,7 @@ const navLinks = [
   { path: "/contact", label: "Contact" },
 ];
 
-const Navbar = () => {
+const Navbar = ({ theme, onToggleTheme }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
@@ -64,8 +65,19 @@ const Navbar = () => {
         </div>
 
         <button
+          className="theme-toggle"
+          onClick={onToggleTheme}
+          type="button"
+          aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
+          title={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
+        >
+          {theme === "dark" ? <FiSun /> : <FiMoon />}
+        </button>
+
+        <button
           className={`hamburger ${isOpen ? "open" : ""}`}
           onClick={() => setIsOpen(!isOpen)}
+          type="button"
           aria-label={isOpen ? "Close menu" : "Open menu"}
           aria-expanded={isOpen}
         >
@@ -85,4 +97,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-

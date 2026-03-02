@@ -13,6 +13,7 @@
 
   /* Neutrals */
   --color-bg: #f8fafb;
+  --color-bg-overlay: rgba(248, 250, 251, 0.85);
   --color-surface: #ffffff;
   --color-surface-hover: #f1f5f9;
   --color-border: #e2e8f0;
@@ -63,4 +64,23 @@
   /* Layout */
   --max-width: 1200px;
   --navbar-height: 72px;
+}
+
+:root[data-theme='dark'] {
+  --color-bg: #060b16;
+  --color-bg-overlay: rgba(6, 11, 22, 0.85);
+  --color-surface: #0f172a;
+  --color-surface-hover: #162037;
+  --color-border: #28344d;
+  --color-border-light: #1d2940;
+
+  --color-text: #e2e8f0;
+  --color-text-secondary: #cbd5e1;
+  --color-text-muted: #94a3b8;
+
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.35);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 12px 40px rgba(0, 0, 0, 0.45);
+  --shadow-xl: 0 20px 60px rgba(0, 0, 0, 0.55);
+  --shadow-primary: 0 8px 30px rgba(16, 185, 129, 0.28);
 }

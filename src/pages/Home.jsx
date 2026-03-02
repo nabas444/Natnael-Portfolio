@@ -9,13 +9,11 @@ const Home = () => {
 
   const techStack = [
     { name: "React", icon: "⚛️" },
-    { name: "TypeScript", icon: "🔷" },
     { name: "JavaScript", icon: "🟨" },
     { name: "Node.js", icon: "🟩" },
     { name: "CSS3", icon: "🎨" },
     { name: "Git", icon: "🔀" },
-    { name: "MongoDB", icon: "🍃" },
-    { name: "PostgreSQL", icon: "🐘" },
+    { name: "MySql", icon: "🍃" },
   ];
 
   return (
