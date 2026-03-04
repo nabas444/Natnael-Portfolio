@@ -42,7 +42,7 @@ export const projects = [
     summary:
       "Developed a streaming application featuring categorized content rows, trailer playback integration, user authentication, and engaging cinematic UI interactions.",
     image:
-      "https://cdn.dribbble.com/userupload/12364362/file/original-34f1922d567a10de39810852528dcc3d.png?resize=1024x768&vertical=center",
+      "/movie-streaming.png",
     techStack: ["React", "Firebase", "CSS", "Socket.io", "Redux"],
     liveUrl: "https://filmstudo.vercel.app/",
     githubUrl: "https://github.com/nabas444/streamify",
@@ -77,7 +77,7 @@ export const projects = [
     summary:
       "Built a portfolio website featuring project showcases, skill highlights, and interactive UI elements to create an engaging presentation of professional achievements.",
     image:
-      "https://cdn.dribbble.com/userupload/46100606/file/a6a618fe81690747a0d748d285d8a4de.png?resize=1024x768&vertical=center",
+      "/portfolio.png",
     techStack: ["React", "CSS Animations"],
     liveUrl: "https://example.com",
     githubUrl: "https://github.com/nabas444/Natnael-Portfolio",
@@ -111,7 +111,7 @@ export const projects = [
     summary:
       "Developed a scalable online learning platform with course management, secure authentication, video streaming, and student progress tracking.",
     image:
-      "https://cdn.dribbble.com/userupload/45937962/file/3aff05457114354320172328c5557d5f.jpg?resize=1024x768&vertical=center",
+      "/elearnify.png",
     techStack: ["React", "Node.js", "Express", "MySQL", "JWT", "CSS"],
     liveUrl: "https://your-live-link.com",
     githubUrl: "https://github.com/your-username/evangadi-clone",
@@ -145,7 +145,7 @@ export const projects = [
   summary:
     "Built a productivity-focused task manager with dynamic task boards, smooth animations, and an optimized user experience.",
   image:
-    "https://cdn.dribbble.com/userupload/42520596/file/original-679d884ab5b03ee5931fe1cd72da04ae.png?resize=768x576&vertical=center",
+    "/taskflow.png",
   techStack: ["React", "JavaScript", "DnD Kit", "Zustand", "Framer Motion"],
   liveUrl: "https://your-live-link.com",
   githubUrl: "https://github.com/your-username/taskflow-pro",
@@ -180,7 +180,7 @@ export const projects = [
       "Developed Garajify, a full-featured car maintenance application providing service scheduling, vehicle health tracking, and repair management with a seamless user experience.",
 
     image:
-      "https://cdn.dribbble.com/userupload/12558456/file/original-fa26d7598b4062c7fe8066bc0012b594.jpg?resize=1600x1200&vertical=center",
+      "/garajify.png",
     techStack: ["React", "Node.js", "MySQL", "Express", "JWT Auth", "Firebase"],
     liveUrl: "https://example.com",
     githubUrl: "https://github.com",
