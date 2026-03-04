@@ -77,7 +77,7 @@ export const projects = [
       "Built a portfolio website featuring project showcases, skill highlights, and interactive UI elements to create an engaging presentation of professional achievements.",
     image: "/portfolio.jpg?v=20260304",
     techStack: ["React", "CSS Animations"],
-    liveUrl: "https://natnaelportfolio.vercel.app/projects",
+    liveUrl: "https://natnaelportfolio.vercel.app/",
     githubUrl: "https://github.com/nabas444/Natnael-Portfolio",
     features: [
       "Showcase of personal projects with interactive previews",
@@ -134,38 +134,38 @@ export const projects = [
     ],
   },
   {
-  id: "taskflow-pro",
-  title: "TaskFlow Pro",
-  category: "Frontend",
-  description:
-    "A modern and intuitive task management application designed to boost productivity with smart organization, drag-and-drop functionality, and real-time task tracking.",
-  summary:
-    "Built a productivity-focused task manager with dynamic task boards, smooth animations, and an optimized user experience.",
-  image: "/taskflow.jpg?v=20260304",
-  techStack: ["React", "JavaScript", "DnD Kit", "Zustand", "Framer Motion"],
-  liveUrl: "https://your-live-link.com",
-  githubUrl: "https://github.com/your-username/taskflow-pro",
-  features: [
-    "Drag-and-drop task organization",
-    "Task priority and labeling system",
-    "Due date tracking with reminders",
-    "Dynamic board and list views",
-    "Real-time UI updates with state management",
-    "Responsive design for all screen sizes",
-  ],
-  challenges: [
-    {
-      title: "Complex Drag-and-Drop Logic",
-      description:
-        "Implemented multi-column drag-and-drop functionality with accurate state synchronization and smooth animations.",
-    },
-    {
-      title: "Scalable State Management",
-      description:
-        "Designed an optimized global state architecture using Zustand to efficiently handle dynamic task updates and UI re-rendering.",
-    },
-  ],
-},
+    id: "taskflow-pro",
+    title: "TaskFlow Pro",
+    category: "Frontend",
+    description:
+      "A modern and intuitive task management application designed to boost productivity with smart organization, drag-and-drop functionality, and real-time task tracking.",
+    summary:
+      "Built a productivity-focused task manager with dynamic task boards, smooth animations, and an optimized user experience.",
+    image: "/taskflow.jpg?v=20260304",
+    techStack: ["React", "JavaScript", "DnD Kit", "Zustand", "Framer Motion"],
+    liveUrl: "https://your-live-link.com",
+    githubUrl: "https://github.com/your-username/taskflow-pro",
+    features: [
+      "Drag-and-drop task organization",
+      "Task priority and labeling system",
+      "Due date tracking with reminders",
+      "Dynamic board and list views",
+      "Real-time UI updates with state management",
+      "Responsive design for all screen sizes",
+    ],
+    challenges: [
+      {
+        title: "Complex Drag-and-Drop Logic",
+        description:
+          "Implemented multi-column drag-and-drop functionality with accurate state synchronization and smooth animations.",
+      },
+      {
+        title: "Scalable State Management",
+        description:
+          "Designed an optimized global state architecture using Zustand to efficiently handle dynamic task updates and UI re-rendering.",
+      },
+    ],
+  },
   {
     id: "garajify",
     title: "Garajify",
