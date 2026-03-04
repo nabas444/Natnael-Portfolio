@@ -57,7 +57,14 @@ const ProjectDetail = () => {
         </div>
 
         <div className="project-detail-image">
-          <img src={project.image} alt={project.title} />
+          <img
+            src={project.image}
+            alt={project.title}
+            referrerPolicy="no-referrer"
+            onError={(event) => {
+              event.currentTarget.src = "/placeholder.svg";
+            }}
+          />
         </div>
 
         <div className="project-detail-grid">

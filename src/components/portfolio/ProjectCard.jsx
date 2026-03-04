@@ -7,7 +7,15 @@ const ProjectCard = ({ id, title, category, description, image, techStack, liveU
     <article className="project-card">
       <Link to={`/projects/${id}`} style={{ textDecoration: "none", color: "inherit" }}>
         <div className="project-card-image">
-          <img src={image} alt={title} loading="lazy" />
+          <img
+            src={image}
+            alt={title}
+            loading="lazy"
+            referrerPolicy="no-referrer"
+            onError={(event) => {
+              event.currentTarget.src = "/placeholder.svg";
+            }}
+          />
           <div className="project-card-overlay" />
         </div>
         <div className="project-card-body">
@@ -48,4 +56,3 @@ const ProjectCard = ({ id, title, category, description, image, techStack, liveU
 };
 
 export default ProjectCard;
-
