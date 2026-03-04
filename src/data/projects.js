@@ -77,7 +77,7 @@ export const projects = [
       "Built a portfolio website featuring project showcases, skill highlights, and interactive UI elements to create an engaging presentation of professional achievements.",
     image: "/portfolio.jpg?v=20260304",
     techStack: ["React", "CSS Animations"],
-    liveUrl: "https://example.com",
+    liveUrl: "https://natnaelportfolio.vercel.app/projects",
     githubUrl: "https://github.com/nabas444/Natnael-Portfolio",
     features: [
       "Showcase of personal projects with interactive previews",
