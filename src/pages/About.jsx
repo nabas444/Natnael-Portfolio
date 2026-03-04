@@ -1,28 +1,23 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
-import { FaLaptopCode, FaPaintBrush, FaServer, FaTools } from "react-icons/fa";
+import { FaLaptopCode, FaServer, FaTools } from "react-icons/fa";
 import "../styles/about.css";
 
 const skills = [
   {
     Icon: FaLaptopCode,
     title: "Frontend Development",
-    items: ["React", "TypeScript", "JavaScript", "HTML5", "CSS3/SASS", "Next.js"],
-  },
-  {
-    Icon: FaPaintBrush,
-    title: "UI/UX Design",
-    items: ["Figma", "Responsive Design", "Design Systems", "Accessibility", "Animation", "Prototyping"],
+    items: ["React", "JavaScript", "HTML5", "CSS3/SASS", "Bootstrap"],
   },
   {
     Icon: FaTools,
     title: "Tools & DevOps",
-    items: ["Git/GitHub", "Webpack/Vite", "Jest/Vitest", "CI/CD", "Docker", "VS Code"],
+    items: ["Git/GitHub", "Webpack/Vite", "Jest/Vitest", "CI/CD", "VS Code"],
   },
   {
     Icon: FaServer,
     title: "Backend & Database",
-    items: ["Node.js", "Express", "MongoDB", "PostgreSQL", "REST APIs", "Firebase"],
+    items: ["Node.js", "Express", "Mysql", "REST APIs", "Firebase"],
   },
 ];
 
@@ -75,15 +70,6 @@ const About = () => {
       >
         <div className="container">
           <div className="about-hero-shell">
-            <div className="about-photo-wrap">
-              <div className="about-photo">
-                <img
-                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&h=680&fit=crop&crop=face"
-                  alt="Natnael Abebe portrait"
-                />
-              </div>
-            </div>
-
             <div className="about-info">
               <p className="about-kicker">Who I Am</p>
               <h1>Crafting Product-Ready Web Experiences</h1>

@@ -71,53 +71,46 @@
 }
 
 .about-hero-shell {
-  display: grid;
-  grid-template-columns: 0.95fr 1.35fr;
-  gap: clamp(0.9rem, 2.4vw, 1.8rem);
-  align-items: stretch;
-  padding: clamp(0.85rem, 2vw, 1.25rem);
-  max-width: 1080px;
+  position: relative;
+  padding: clamp(1.2rem, 3vw, 2.2rem);
+  max-width: 900px;
   margin: 0 auto;
   border-radius: 24px;
   border: 1px solid rgba(148, 163, 184, 0.28);
-  background: linear-gradient(145deg, rgba(255, 255, 255, 0.88), rgba(241, 245, 249, 0.74));
+  background:
+    radial-gradient(circle at 50% 0%, rgba(16, 185, 129, 0.14), transparent 40%),
+    radial-gradient(circle at 100% 100%, rgba(6, 182, 212, 0.14), transparent 42%),
+    linear-gradient(145deg, rgba(255, 255, 255, 0.9), rgba(241, 245, 249, 0.78));
   box-shadow: 0 22px 46px rgba(15, 23, 42, 0.1);
-}
-
-.about-photo-wrap {
-  position: relative;
-  border-radius: 20px;
-  overflow: hidden;
-  padding: 0;
-  background: transparent;
-  border: 1px solid rgba(148, 163, 184, 0.3);
-  box-shadow: 0 12px 26px rgba(15, 23, 42, 0.14);
-}
-
-.about-photo {
-  position: relative;
-  z-index: 1;
-  width: 100%;
-  aspect-ratio: 4 / 5;
-  border-radius: 18px;
   overflow: hidden;
 }
 
-.about-photo img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transform: scale(1.01);
+.about-hero-shell::before {
+  content: "";
+  position: absolute;
+  top: -90px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(16, 185, 129, 0.22), rgba(16, 185, 129, 0));
+  pointer-events: none;
+  filter: blur(1px);
 }
 
 .about-info {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 2px;
 }
 
 .about-kicker {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   width: fit-content;
   padding: 6px 12px;
   border-radius: var(--radius-full);
@@ -135,6 +128,7 @@
   margin-bottom: var(--space-sm);
   line-height: 1.12;
   font-size: clamp(1.8rem, 4vw, 2.7rem);
+  max-width: 18ch;
 }
 
 .about-role {
@@ -147,6 +141,9 @@
 .about-bio p {
   margin-bottom: 0.8rem;
   font-size: 0.96rem;
+  max-width: 66ch;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .about-highlights {
@@ -154,6 +151,8 @@
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 8px;
+  width: 100%;
+  max-width: 620px;
 }
 
 .about-highlight {
@@ -182,6 +181,8 @@
 
 .about-download {
   margin-top: var(--space-md);
+  display: flex;
+  justify-content: center;
 }
 
 .about-cv-btn {
@@ -473,6 +474,13 @@
   box-shadow: 0 18px 34px rgba(2, 6, 23, 0.42);
 }
 
+:root[data-theme="dark"] .about-hero-shell {
+  background:
+    radial-gradient(circle at 50% 0%, rgba(16, 185, 129, 0.18), transparent 42%),
+    radial-gradient(circle at 100% 100%, rgba(6, 182, 212, 0.16), transparent 42%),
+    linear-gradient(145deg, rgba(15, 23, 42, 0.9), rgba(19, 28, 49, 0.8));
+}
+
 :root[data-theme="dark"] .skill-category {
   border-color: rgba(34, 211, 238, 0.28);
   box-shadow: 0 18px 34px rgba(2, 6, 23, 0.46), 0 0 0 1px rgba(34, 211, 238, 0.08);
@@ -621,13 +629,7 @@
 
 @media (max-width: 1024px) {
   .about-hero-shell {
-    grid-template-columns: 1fr;
-  }
-
-  .about-photo {
-    max-width: 280px;
-    margin: 0 auto;
-    aspect-ratio: 1;
+    padding: clamp(1rem, 3vw, 1.4rem);
   }
 }
 

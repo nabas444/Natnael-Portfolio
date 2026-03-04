@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { FaGitAlt } from "react-icons/fa";
-import { SiCss3, SiJavascript, SiMysql, SiNodedotjs, SiReact } from "react-icons/si";
+import { SiCss3, SiExpress, SiJavascript, SiMysql, SiNodedotjs, SiReact } from "react-icons/si";
 import { projects } from "../data/projects.js";
 import ProjectCard from "../components/portfolio/ProjectCard.jsx";
 import "../styles/home.css";
@@ -18,7 +18,7 @@ const DEVELOPER_SNIPPET = `const developer = {
 };`;
 
 const Home = () => {
-  const featuredProjects = projects.slice(0, 3);
+  const featuredProjects = projects.slice(0, 5);
   const [typedGreeting, setTypedGreeting] = useState("");
   const [typedName, setTypedName] = useState("");
   const [typedSnippet, setTypedSnippet] = useState("");
@@ -27,6 +27,13 @@ const Home = () => {
   const [isCtaVisible, setIsCtaVisible] = useState(false);
   const featuredRef = useRef(null);
   const ctaRef = useRef(null);
+  const featuredCarouselRef = useRef(null);
+  const featuredHoverSpeedRef = useRef(null);
+  const featuredTargetSpeedRef = useRef(0.45);
+  const featuredCurrentSpeedRef = useRef(0.45);
+  const featuredClickPauseUntilRef = useRef(0);
+  const featuredClickTimerRef = useRef(null);
+  const featuredRafRef = useRef(null);
 
   useEffect(() => {
     let isCancelled = false;
@@ -115,6 +122,98 @@ const Home = () => {
   }, []);
 
   useEffect(() => {
+    const carousel = featuredCarouselRef.current;
+    if (!carousel) return undefined;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return undefined;
+
+    const updateFeaturedDepth = () => {
+      const slides = carousel.querySelectorAll(".featured-projects-slide");
+      const viewportCenter = carousel.scrollLeft + carousel.clientWidth / 2;
+
+      slides.forEach((slide) => {
+        const slideCenter = slide.offsetLeft + slide.clientWidth / 2;
+        const distance = (slideCenter - viewportCenter) / slide.clientWidth;
+        const clamped = Math.max(-1.35, Math.min(1.35, distance));
+        const absolute = Math.min(1, Math.abs(clamped));
+
+        slide.style.setProperty("--focus", clamped.toFixed(3));
+        slide.style.setProperty("--focus-abs", absolute.toFixed(3));
+        slide.classList.toggle("is-featured-active", absolute < 0.28);
+      });
+    };
+
+    const loopWidth = () => carousel.scrollWidth / 2;
+
+    const recenterIfNeeded = () => {
+      const half = loopWidth();
+      if (carousel.scrollLeft >= half) {
+        carousel.scrollLeft -= half;
+      } else if (carousel.scrollLeft <= 0) {
+        carousel.scrollLeft += half;
+      }
+    };
+
+    const initializePosition = () => {
+      featuredTargetSpeedRef.current = 0.45;
+      featuredCurrentSpeedRef.current = 0.45;
+      carousel.scrollLeft = loopWidth() / 2;
+      updateFeaturedDepth();
+    };
+
+    const tick = () => {
+      const now = window.performance.now();
+      const hoverSpeed = featuredHoverSpeedRef.current;
+      const isClickPaused = now < featuredClickPauseUntilRef.current;
+      const rect = carousel.getBoundingClientRect();
+      const isInViewport =
+        rect.bottom > 0 &&
+        rect.top < window.innerHeight &&
+        rect.right > 0 &&
+        rect.left < window.innerWidth &&
+        document.visibilityState === "visible";
+
+      const target = !isInViewport
+        ? 0
+        : isClickPaused
+        ? 0
+        : (typeof hoverSpeed === "number" ? hoverSpeed : 0.45);
+
+      featuredTargetSpeedRef.current = target;
+      const current = featuredCurrentSpeedRef.current;
+      const eased = current + (target - current) * 0.08;
+      featuredCurrentSpeedRef.current = eased;
+
+      carousel.scrollLeft += eased;
+      recenterIfNeeded();
+      updateFeaturedDepth();
+
+      featuredRafRef.current = window.requestAnimationFrame(tick);
+    };
+
+    const handleResize = () => {
+      recenterIfNeeded();
+      updateFeaturedDepth();
+    };
+
+    // Start the infinite rail as soon as Home mounts and layout is ready.
+    featuredRafRef.current = window.requestAnimationFrame(() => {
+      initializePosition();
+      featuredRafRef.current = window.requestAnimationFrame(tick);
+    });
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+      if (featuredClickTimerRef.current) {
+        window.clearTimeout(featuredClickTimerRef.current);
+      }
+      if (featuredRafRef.current) {
+        window.cancelAnimationFrame(featuredRafRef.current);
+      }
+    };
+  }, []);
+
+  useEffect(() => {
     const target = ctaRef.current;
     if (!target) return undefined;
 
@@ -142,6 +241,53 @@ const Home = () => {
   const isGreetingTyping = activeTypingTarget === "greeting";
   const isNameTyping = activeTypingTarget === "name";
   const isSnippetTyping = activeTypingTarget === "snippet";
+
+  const handleFeaturedMouseMove = (event) => {
+    const rect = event.currentTarget.getBoundingClientRect();
+    const position = (event.clientX - rect.left) / rect.width;
+    const clamped = Math.max(0, Math.min(1, position));
+    const centered = clamped - 0.5;
+
+    if (centered <= -0.08) {
+      featuredHoverSpeedRef.current = -(0.3 + Math.abs(centered) * 3.2);
+      return;
+    }
+
+    if (centered >= 0.08) {
+      featuredHoverSpeedRef.current = 0.3 + centered * 3.2;
+      return;
+    }
+
+    featuredHoverSpeedRef.current = 0.45;
+  };
+
+  const handleFeaturedMouseLeave = () => {
+    featuredHoverSpeedRef.current = null;
+  };
+
+  const pauseFeaturedOnClick = (duration = 1100) => {
+    featuredClickPauseUntilRef.current = window.performance.now() + duration;
+    if (featuredClickTimerRef.current) {
+      window.clearTimeout(featuredClickTimerRef.current);
+    }
+    featuredClickTimerRef.current = window.setTimeout(() => {
+      featuredClickPauseUntilRef.current = 0;
+    }, duration + 40);
+  };
+
+  const handleFeaturedArrow = (direction) => {
+    const carousel = featuredCarouselRef.current;
+    if (!carousel) return;
+    pauseFeaturedOnClick(900);
+
+    const slide = carousel.querySelector(".featured-projects-slide");
+    const step = slide ? slide.clientWidth + 24 : 280;
+
+    carousel.scrollBy({
+      left: direction * step,
+      behavior: "smooth",
+    });
+  };
 
   const techStack = [
     { name: "React", Icon: SiReact, key: "react" },
@@ -208,15 +354,23 @@ const Home = () => {
             </div>
 
             <div className="hero-visual animate-fade-up-delay-2">
-              <div className="hero-image-wrapper">
-                <div className="hero-image-core">
-                  <img
-                    src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face"
-                    alt="Alex Chen - Frontend Developer"
-                  />
+              <div className="hero-tech-showcase" role="presentation" aria-hidden="true">
+                <div className="hero-tech-glow" />
+                <div className="hero-tech-trio">
+                  <div className="hero-tech-badge badge-react">
+                    <SiReact />
+                    <span>React</span>
+                  </div>
+                  <div className="hero-tech-badge badge-express">
+                    <SiExpress />
+                    <span>Express</span>
+                  </div>
+                  <div className="hero-tech-badge badge-node">
+                    <SiNodedotjs />
+                    <span>Node</span>
+                  </div>
                 </div>
-                <div className="hero-decoration" />
-                <div className="hero-ring-cut" />
+                <p className="hero-tech-caption">Core Build Trio</p>
               </div>
             </div>
           </div>
@@ -303,16 +457,42 @@ const Home = () => {
             <p className="featured-subtitle">A selection of my recent work</p>
           </div>
           <div className="featured-projects-carousel" aria-label="Featured projects carousel">
-            <div className="featured-projects-track">
-              {[...featuredProjects, ...featuredProjects].map((project, index) => (
-                <div
-                  className="featured-projects-slide"
-                  key={`${project.id}-${index}`}
-                  aria-hidden={index >= featuredProjects.length}
-                >
-                  <ProjectCard {...project} />
+            <div className="featured-carousel-shell">
+              <button
+                type="button"
+                className="featured-nav-btn featured-nav-prev"
+                aria-label="Scroll featured projects left"
+                onClick={() => handleFeaturedArrow(-1)}
+              >
+                &larr;
+              </button>
+              <div
+                ref={featuredCarouselRef}
+                className="featured-projects-viewport"
+                onMouseMove={handleFeaturedMouseMove}
+                onMouseLeave={handleFeaturedMouseLeave}
+                onPointerDown={() => pauseFeaturedOnClick(1400)}
+              >
+                <div className="featured-projects-track">
+                  {[...featuredProjects, ...featuredProjects].map((project, index) => (
+                    <div
+                      className="featured-projects-slide"
+                      key={`${project.id}-${index}`}
+                      aria-hidden={index >= featuredProjects.length}
+                    >
+                      <ProjectCard {...project} />
+                    </div>
+                  ))}
                 </div>
-              ))}
+              </div>
+              <button
+                type="button"
+                className="featured-nav-btn featured-nav-next"
+                aria-label="Scroll featured projects right"
+                onClick={() => handleFeaturedArrow(1)}
+              >
+                &rarr;
+              </button>
             </div>
           </div>
           <div className="view-all-projects-wrap">
@@ -348,7 +528,3 @@ const Home = () => {
 };
 
 export default Home;
-
-
-
-

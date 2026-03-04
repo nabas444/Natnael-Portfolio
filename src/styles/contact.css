@@ -2,6 +2,10 @@
   padding-top: calc(var(--navbar-height) + var(--space-3xl));
   position: relative;
   overflow: hidden;
+  background:
+    radial-gradient(circle at 8% 10%, rgba(16, 185, 129, 0.08), transparent 34%),
+    radial-gradient(circle at 90% 88%, rgba(6, 182, 212, 0.09), transparent 36%),
+    var(--color-bg);
 }
 
 .contact-hero {
@@ -71,6 +75,7 @@
 .contact-header p {
   animation: contact-subtitle-shimmer 5.6s linear infinite;
 }
+
 
 .contact-kicker {
   display: inline-flex;
@@ -477,6 +482,13 @@
   color: #99f6e4;
   border-color: rgba(45, 212, 191, 0.32);
   background: linear-gradient(135deg, rgba(16, 185, 129, 0.2), rgba(34, 211, 238, 0.18));
+}
+
+:root[data-theme="dark"] .contact-page {
+  background:
+    radial-gradient(circle at 8% 10%, rgba(16, 185, 129, 0.12), transparent 36%),
+    radial-gradient(circle at 90% 88%, rgba(6, 182, 212, 0.14), transparent 38%),
+    var(--color-bg);
 }
 
 :root[data-theme="dark"] .contact-header h1 {

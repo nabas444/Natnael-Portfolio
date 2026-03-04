@@ -5,6 +5,7 @@ import "../styles/projects.css";
 
 const Projects = () => {
   const [activeFilter, setActiveFilter] = useState("All");
+  const visibleCategories = categories.filter((cat) => cat !== "UI Design");
 
   const filteredProjects =
     activeFilter === "All"
@@ -14,41 +15,42 @@ const Projects = () => {
   return (
     <main className="projects-page">
       <div className="container">
-        <div className="section-header">
+        <div className="section-header projects-header">
+          <p className="projects-kicker">Selected Works</p>
           <h1>My Projects</h1>
           <p>
-            A curated collection of projects showcasing my skills in frontend
-            development, UI design, and full-stack engineering.
+            A curated set of frontend and fullstack builds focused on polished interfaces,
+            scalable architecture, and production-ready user experience.
           </p>
         </div>
 
-        <div className="project-filters" role="group" aria-label="Filter projects by category">
-          {categories.map((cat) => (
-            <button
-              key={cat}
-              className={`filter-btn ${activeFilter === cat ? "active" : ""}`}
-              onClick={() => setActiveFilter(cat)}
-              aria-pressed={activeFilter === cat}
-            >
-              {cat}
-            </button>
-          ))}
+        <div className="project-filters-wrap">
+          <div className="project-filters" role="group" aria-label="Filter projects by category">
+            {visibleCategories.map((cat) => (
+              <button
+                key={cat}
+                className={`filter-btn ${activeFilter === cat ? "active" : ""}`}
+                onClick={() => setActiveFilter(cat)}
+                aria-pressed={activeFilter === cat}
+              >
+                {cat}
+              </button>
+            ))}
+          </div>
+          <p className="projects-filter-meta">
+            Showing <strong>{filteredProjects.length}</strong> project
+            {filteredProjects.length === 1 ? "" : "s"} in <strong>{activeFilter}</strong>
+          </p>
         </div>
 
-        <div className="projects-grid">
+        <div key={activeFilter} className="projects-grid projects-grid-animate">
           {filteredProjects.map((project) => (
             <ProjectCard key={project.id} {...project} />
           ))}
         </div>
 
         {filteredProjects.length === 0 && (
-          <p
-            style={{
-              textAlign: "center",
-              color: "var(--color-text-muted)",
-              padding: "var(--space-3xl) 0",
-            }}
-          >
+          <p className="projects-empty">
             No projects found in this category.
           </p>
         )}
@@ -58,4 +60,3 @@ const Projects = () => {
 };
 
 export default Projects;
-

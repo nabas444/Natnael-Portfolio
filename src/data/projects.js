@@ -4,20 +4,20 @@ export const projects = [
     title: "E-Commerce Dashboard",
     category: "Fullstack",
     description:
-      "A comprehensive admin dashboard for managing online store operations, featuring real-time analytics, inventory management, and order processing with a sleek modern interface.",
+      "A full-featured Amazon-inspired e-commerce platform that delivers a seamless online shopping experience, featuring product browsing, smart search, cart management, secure checkout, and responsive modern UI design.",
     summary:
-      "Built a full-featured e-commerce dashboard with real-time data visualization, inventory tracking, and order management capabilities.",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=500&fit=crop",
-    techStack: ["React", "Node.js", "MongoDB", "Chart.js", "Express"],
+      "Developed a complete Amazon-style e-commerce website with dynamic product listings, shopping cart functionality, authentication system, and smooth user-focused purchasing workflow.",
+    image: "/gebeyacom.png",
+    techStack: ["React", "Node.js", "Firebase", "Mysql", "Express"],
     liveUrl: "https://example.com",
-    githubUrl: "https://github.com",
+    githubUrl: "https://github.com/nabas444/Gebeya",
     features: [
-      "Real-time sales analytics with interactive charts",
-      "Inventory management with low-stock alerts",
-      "Order processing pipeline with status tracking",
-      "Customer management with search and filtering",
-      "Role-based access control system",
-      "Dark/Light theme support",
+      "Dynamic product catalog with advanced search and filtering options",
+      "Real-time inventory tracking with low-stock notifications",
+      "Order management system with status updates and tracking",
+      "Customer account management with order history and preferences",
+      "Role-based access control for admins and staff",
+      "support with responsive modern UI",
     ],
     challenges: [
       {
@@ -33,80 +33,83 @@ export const projects = [
     ],
   },
   {
-    id: "social-media-app",
-    title: "Social Connect",
+    id: "Movie-Streaming-Platform",
+    title: "Movie Streaming Platform",
     category: "Fullstack",
     description:
-      "A modern social media platform with real-time messaging, post sharing, and community features built with a focus on performance and user experience.",
+      "A modern streaming platform inspired by Netflix, featuring dynamic movie browsing, personalized recommendations, trailer previews, and seamless content exploration built with a focus on performance and immersive user experience.",
+
     summary:
-      "Developed a social media application featuring real-time chat, content sharing, and user engagement analytics.",
-    image: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800&h=500&fit=crop",
-    techStack: ["React", "Firebase", "Tailwind CSS", "Socket.io", "Redux"],
-    liveUrl: "https://example.com",
-    githubUrl: "https://github.com",
+      "Developed a streaming application featuring categorized content rows, trailer playback integration, user authentication, and engaging cinematic UI interactions.",
+    image: "/cinestream.png",
+    techStack: ["React", "Firebase", "CSS", "Socket.io", "Redux"],
+    liveUrl: "https://filmstudo.vercel.app/",
+    githubUrl: "https://github.com/nabas444/streamify",
     features: [
-      "Real-time messaging with read receipts",
-      "Rich media post creation with image uploads",
-      "Follow/unfollow system with activity feeds",
-      "Comment and reaction system",
-      "User profile customization",
-      "Push notifications",
+      "Dynamic movie and TV show browsing with search functionality",
+      "Personalized recommendations based on user preferences",
+      "Trailer previews and interactive content cards",
+      "Watchlist management for saving favorite titles",
+      "User authentication with profile management",
+      "Responsive design with smooth playback across devices",
     ],
     challenges: [
       {
-        title: "Optimistic UI Updates",
+        title: "Smooth Video Playback",
         description:
-          "Implemented optimistic rendering for likes and comments to ensure instant feedback while syncing with the backend asynchronously.",
+          "Implemented adaptive streaming and efficient video buffering to ensure seamless playback across different network conditions without lag or interruptions.",
       },
       {
-        title: "Infinite Scroll Performance",
+        title: "Dynamic Content Loading",
         description:
-          "Built a virtualized infinite scroll feed that handles thousands of posts without memory issues using intersection observer and windowing techniques.",
+          "Built a performant infinite scroll for movie and TV show rows, using lazy loading and virtualization to handle large datasets efficiently.",
       },
     ],
   },
   {
-    id: "weather-app",
-    title: "WeatherScope",
+    id: "Portfolio-Website",
+    title: "Portfolio Website",
     category: "Frontend",
     description:
-      "A beautiful weather application featuring animated weather conditions, 7-day forecasts, and location-based services with a glassmorphism design aesthetic.",
+      "A modern personal portfolio website showcasing projects, skills, and experience with a clean, responsive design, interactive sections, and engaging visual elements to highlight professional work.",
+
     summary:
-      "Created an elegant weather application with dynamic animations, geolocation support, and comprehensive forecast data.",
-    image: "https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?w=800&h=500&fit=crop",
-    techStack: ["React", "OpenWeather API", "CSS Animations", "Geolocation API"],
+      "Built a portfolio website featuring project showcases, skill highlights, and interactive UI elements to create an engaging presentation of professional achievements.",
+    image: "/portfolio.png",
+    techStack: ["React", "CSS Animations", ,],
     liveUrl: "https://example.com",
-    githubUrl: "https://github.com",
+    githubUrl: "https://github.com/nabas444/Natnael-Portfolio",
     features: [
-      "Current weather with dynamic backgrounds",
-      "7-day extended forecast",
-      "Hourly temperature charts",
-      "Location search with autocomplete",
-      "Geolocation-based weather detection",
-      "Animated weather icons",
+      "Showcase of personal projects with interactive previews",
+      "Skills section highlighting technologies and expertise",
+      "Responsive design compatible with desktop and mobile",
+      "Contact form with smooth submission experience",
+      "About section detailing professional background and goals",
+      "Animated UI elements for an engaging browsing experience",
     ],
     challenges: [
       {
-        title: "Dynamic Theme System",
+        title: "Responsive and Adaptive Design",
         description:
-          "Created a theme system that automatically adjusts the entire UI based on weather conditions and time of day at the user's location.",
+          "Implemented a fully responsive layout with adaptive UI elements to ensure seamless user experience across all devices and screen sizes.",
       },
       {
-        title: "Offline Functionality",
+        title: "Interactive Portfolio Components",
         description:
-          "Implemented service workers and IndexedDB caching to provide weather data even without internet connectivity.",
+          "Built interactive sections with animations and smooth transitions to enhance engagement while efficiently managing state and performance.",
       },
     ],
   },
   {
     id: "task-manager",
-    title: "TaskFlow Pro",
+    title: "Learning Platform",
     category: "Frontend",
     description:
       "A Kanban-style task management application with drag-and-drop functionality, team collaboration features, and productivity analytics.",
     summary:
       "Built a project management tool with Kanban boards, real-time collaboration, and performance tracking.",
-    image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800&h=500&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800&h=500&fit=crop",
     techStack: ["React", "TypeScript", "DnD Kit", "Zustand", "Framer Motion"],
     liveUrl: "https://example.com",
     githubUrl: "https://github.com",
@@ -134,12 +137,13 @@ export const projects = [
   {
     id: "portfolio-redesign",
     title: "Brand Identity Website",
-    category: "UI Design",
+    category: "Frontend",
     description:
       "A stunning portfolio and brand identity website for a creative agency, featuring immersive scroll animations and a bold typographic design system.",
     summary:
       "Designed and developed a creative agency website with cinematic scroll animations and bold visual storytelling.",
-    image: "https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=800&h=500&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=800&h=500&fit=crop",
     techStack: ["React", "GSAP", "Three.js", "CSS Grid", "Figma"],
     liveUrl: "https://example.com",
     githubUrl: "https://github.com",
@@ -165,39 +169,40 @@ export const projects = [
     ],
   },
   {
-    id: "fitness-tracker",
-    title: "FitTrack",
+    id: "garajify",
+    title: "Garajify",
     category: "Fullstack",
     description:
-      "A comprehensive fitness tracking application with workout logging, progress visualization, and personalized training plans powered by data analytics.",
+      "A comprehensive car maintenance platform enabling users to schedule services, track vehicle health, and manage repair histories with a modern, responsive interface and real-time updates.",
     summary:
-      "Built a fitness tracking platform with workout logging, progress charts, and AI-powered exercise recommendations.",
-    image: "https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?w=800&h=500&fit=crop",
-    techStack: ["React", "Node.js", "PostgreSQL", "D3.js", "JWT Auth"],
+      "Developed Garajify, a full-featured car maintenance application providing service scheduling, vehicle health tracking, and repair management with a seamless user experience.",
+
+    image:
+      "https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?w=800&h=500&fit=crop",
+    techStack: ["React", "Node.js", "MySQL", "Express", "JWT Auth", "Firebase"],
     liveUrl: "https://example.com",
     githubUrl: "https://github.com",
     features: [
-      "Workout logging with exercise library",
-      "Progress tracking with visual charts",
-      "Personal records board",
-      "Custom workout plan builder",
-      "Body measurement tracking",
-      "Social sharing features",
+      "Service booking system with date, time, and mechanic selection",
+      "Vehicle maintenance tracking with service history logs",
+      "Real-time notifications for upcoming service appointments",
+      "Mechanic and garage management dashboards for admins",
+      "User authentication with role-based access control",
+      "Responsive design with interactive UI components",
     ],
     challenges: [
       {
-        title: "Complex Data Visualization",
+        title: "Real-time Data Synchronization",
         description:
-          "Created custom D3.js charts for workout progression that handle variable data points and multiple metric overlays.",
+          "Implemented WebSocket and API-based updates to ensure service schedules, notifications, and vehicle data are always up-to-date across users and admins.",
       },
       {
-        title: "Exercise Form Validation",
+        title: "Complex State and Data Management",
         description:
-          "Built an intelligent form system that validates workout data based on exercise type, user history, and physiological constraints.",
+          "Managed vehicle records, service logs, and user roles efficiently using React context, custom hooks, and backend database relations for optimal performance.",
       },
     ],
   },
 ];
 
-export const categories = ["All", "Frontend", "Fullstack", "UI Design"];
-
+export const categories = ["All", "Frontend", "Fullstack"];
