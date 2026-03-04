@@ -42,7 +42,7 @@ export const projects = [
     summary:
       "Developed a streaming application featuring categorized content rows, trailer playback integration, user authentication, and engaging cinematic UI interactions.",
     image:
-      "/movie-streaming.png",
+      "/movie-streaming.jpg",
     techStack: ["React", "Firebase", "CSS", "Socket.io", "Redux"],
     liveUrl: "https://filmstudo.vercel.app/",
     githubUrl: "https://github.com/nabas444/streamify",
@@ -77,7 +77,7 @@ export const projects = [
     summary:
       "Built a portfolio website featuring project showcases, skill highlights, and interactive UI elements to create an engaging presentation of professional achievements.",
     image:
-      "/portfolio.png",
+      "/portfolio.jpg",
     techStack: ["React", "CSS Animations"],
     liveUrl: "https://example.com",
     githubUrl: "https://github.com/nabas444/Natnael-Portfolio",
@@ -111,7 +111,7 @@ export const projects = [
     summary:
       "Developed a scalable online learning platform with course management, secure authentication, video streaming, and student progress tracking.",
     image:
-      "/elearnify.png",
+      "/elearnify.jpg",
     techStack: ["React", "Node.js", "Express", "MySQL", "JWT", "CSS"],
     liveUrl: "https://your-live-link.com",
     githubUrl: "https://github.com/your-username/evangadi-clone",
@@ -145,7 +145,7 @@ export const projects = [
   summary:
     "Built a productivity-focused task manager with dynamic task boards, smooth animations, and an optimized user experience.",
   image:
-    "/taskflow.png",
+    "/taskflow.jpg",
   techStack: ["React", "JavaScript", "DnD Kit", "Zustand", "Framer Motion"],
   liveUrl: "https://your-live-link.com",
   githubUrl: "https://github.com/your-username/taskflow-pro",
@@ -180,7 +180,7 @@ export const projects = [
       "Developed Garajify, a full-featured car maintenance application providing service scheduling, vehicle health tracking, and repair management with a seamless user experience.",
 
     image:
-      "/garajify.png",
+      "/garajify.jpg",
     techStack: ["React", "Node.js", "MySQL", "Express", "JWT Auth", "Firebase"],
     liveUrl: "https://example.com",
     githubUrl: "https://github.com",
