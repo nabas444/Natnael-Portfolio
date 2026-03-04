@@ -7,7 +7,7 @@ export const projects = [
       "A full-featured Amazon-inspired e-commerce platform that delivers a seamless online shopping experience, featuring product browsing, smart search, cart management, secure checkout, and responsive modern UI design.",
     summary:
       "Developed a complete Amazon-style e-commerce website with dynamic product listings, shopping cart functionality, authentication system, and smooth user-focused purchasing workflow.",
-    image: "/gebeyacom.png",
+    image: "/gebeyacom.png?v=20260304",
     techStack: ["React", "Node.js", "Firebase", "Mysql", "Express"],
     liveUrl: "https://example.com",
     githubUrl: "https://github.com/nabas444/Gebeya",
@@ -41,8 +41,7 @@ export const projects = [
 
     summary:
       "Developed a streaming application featuring categorized content rows, trailer playback integration, user authentication, and engaging cinematic UI interactions.",
-    image:
-      "/movie-streaming.jpg",
+    image: "/movie-streaming.jpg?v=20260304",
     techStack: ["React", "Firebase", "CSS", "Socket.io", "Redux"],
     liveUrl: "https://filmstudo.vercel.app/",
     githubUrl: "https://github.com/nabas444/streamify",
@@ -76,8 +75,7 @@ export const projects = [
 
     summary:
       "Built a portfolio website featuring project showcases, skill highlights, and interactive UI elements to create an engaging presentation of professional achievements.",
-    image:
-      "/portfolio.jpg",
+    image: "/portfolio.jpg?v=20260304",
     techStack: ["React", "CSS Animations"],
     liveUrl: "https://example.com",
     githubUrl: "https://github.com/nabas444/Natnael-Portfolio",
@@ -110,8 +108,7 @@ export const projects = [
       "A full-featured e-learning platform inspired by Evangadi Network, offering structured courses, video lessons, authentication, and interactive learning experiences.",
     summary:
       "Developed a scalable online learning platform with course management, secure authentication, video streaming, and student progress tracking.",
-    image:
-      "/elearnify.jpg",
+    image: "/elearnify.jpg?v=20260304",
     techStack: ["React", "Node.js", "Express", "MySQL", "JWT", "CSS"],
     liveUrl: "https://your-live-link.com",
     githubUrl: "https://github.com/your-username/evangadi-clone",
@@ -144,8 +141,7 @@ export const projects = [
     "A modern and intuitive task management application designed to boost productivity with smart organization, drag-and-drop functionality, and real-time task tracking.",
   summary:
     "Built a productivity-focused task manager with dynamic task boards, smooth animations, and an optimized user experience.",
-  image:
-    "/taskflow.jpg",
+  image: "/taskflow.jpg?v=20260304",
   techStack: ["React", "JavaScript", "DnD Kit", "Zustand", "Framer Motion"],
   liveUrl: "https://your-live-link.com",
   githubUrl: "https://github.com/your-username/taskflow-pro",
@@ -179,8 +175,7 @@ export const projects = [
     summary:
       "Developed Garajify, a full-featured car maintenance application providing service scheduling, vehicle health tracking, and repair management with a seamless user experience.",
 
-    image:
-      "/garajify.jpg",
+    image: "/garajify.jpg?v=20260304",
     techStack: ["React", "Node.js", "MySQL", "Express", "JWT Auth", "Firebase"],
     liveUrl: "https://example.com",
     githubUrl: "https://github.com",
