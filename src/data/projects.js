@@ -35,13 +35,14 @@ export const projects = [
   {
     id: "Movie-Streaming-Platform",
     title: "Movie Streaming Platform",
-    category: "Fullstack",
+    category: "Frontend",
     description:
       "A modern streaming platform inspired by Netflix, featuring dynamic movie browsing, personalized recommendations, trailer previews, and seamless content exploration built with a focus on performance and immersive user experience.",
 
     summary:
       "Developed a streaming application featuring categorized content rows, trailer playback integration, user authentication, and engaging cinematic UI interactions.",
-    image: "/cinestream.png",
+    image:
+      "https://cdn.dribbble.com/userupload/12364362/file/original-34f1922d567a10de39810852528dcc3d.png?resize=1024x768&vertical=center",
     techStack: ["React", "Firebase", "CSS", "Socket.io", "Redux"],
     liveUrl: "https://filmstudo.vercel.app/",
     githubUrl: "https://github.com/nabas444/streamify",
@@ -75,7 +76,8 @@ export const projects = [
 
     summary:
       "Built a portfolio website featuring project showcases, skill highlights, and interactive UI elements to create an engaging presentation of professional achievements.",
-    image: "/portfolio.png",
+    image:
+      "https://cdn.dribbble.com/userupload/46100606/file/a6a618fe81690747a0d748d285d8a4de.png?resize=1024x768&vertical=center",
     techStack: ["React", "CSS Animations", ,],
     liveUrl: "https://example.com",
     githubUrl: "https://github.com/nabas444/Natnael-Portfolio",
@@ -101,73 +103,73 @@ export const projects = [
     ],
   },
   {
-    id: "task-manager",
-    title: "Learning Platform",
-    category: "Frontend",
+    id: "elearnify",
+    title: "E-learning website ",
+    category: "Fullstack",
     description:
-      "A Kanban-style task management application with drag-and-drop functionality, team collaboration features, and productivity analytics.",
+      "A full-featured e-learning platform inspired by Evangadi Network, offering structured courses, video lessons, authentication, and interactive learning experiences.",
     summary:
-      "Built a project management tool with Kanban boards, real-time collaboration, and performance tracking.",
+      "Developed a scalable online learning platform with course management, secure authentication, video streaming, and student progress tracking.",
     image:
-      "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800&h=500&fit=crop",
-    techStack: ["React", "TypeScript", "DnD Kit", "Zustand", "Framer Motion"],
-    liveUrl: "https://example.com",
-    githubUrl: "https://github.com",
+      "https://cdn.dribbble.com/userupload/45937962/file/3aff05457114354320172328c5557d5f.jpg?resize=1024x768&vertical=center",
+    techStack: ["React", "Node.js", "Express", "MySQL", "JWT", "CSS"],
+    liveUrl: "https://your-live-link.com",
+    githubUrl: "https://github.com/your-username/evangadi-clone",
     features: [
-      "Drag-and-drop Kanban boards",
-      "Task priority and labeling system",
-      "Due date tracking with reminders",
-      "Team member assignment",
-      "Progress analytics dashboard",
-      "Keyboard shortcuts for power users",
+      "User authentication and authorization (JWT-based)",
+      "Course listing and detailed course pages",
+      "Video lesson streaming interface",
+      "Student progress tracking system",
+      "Protected routes for enrolled users",
+      "Responsive design for mobile and desktop",
     ],
     challenges: [
       {
-        title: "Complex Drag & Drop",
+        title: "Authentication & Route Protection",
         description:
-          "Implemented multi-container drag and drop with smooth animations and proper state reconciliation across board columns.",
+          "Implemented secure JWT-based authentication and protected routes to ensure only enrolled users can access course content.",
       },
       {
-        title: "Undo/Redo System",
+        title: "Scalable Course Structure",
         description:
-          "Built a command pattern-based undo/redo system that tracks all user actions and allows reversing any operation.",
+          "Designed a relational database schema to efficiently manage courses, lessons, users, and enrollment relationships.",
       },
     ],
   },
   {
-    id: "portfolio-redesign",
-    title: "Brand Identity Website",
-    category: "Frontend",
-    description:
-      "A stunning portfolio and brand identity website for a creative agency, featuring immersive scroll animations and a bold typographic design system.",
-    summary:
-      "Designed and developed a creative agency website with cinematic scroll animations and bold visual storytelling.",
-    image:
-      "https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=800&h=500&fit=crop",
-    techStack: ["React", "GSAP", "Three.js", "CSS Grid", "Figma"],
-    liveUrl: "https://example.com",
-    githubUrl: "https://github.com",
-    features: [
-      "Cinematic scroll-triggered animations",
-      "Interactive 3D elements",
-      "Custom cursor interactions",
-      "Dynamic page transitions",
-      "Responsive typography system",
-      "Performance-optimized media loading",
-    ],
-    challenges: [
-      {
-        title: "Smooth Scroll Animations",
-        description:
-          "Created butter-smooth scroll-linked animations using GSAP ScrollTrigger while maintaining 60fps across all devices.",
-      },
-      {
-        title: "3D Performance",
-        description:
-          "Optimized Three.js scenes to run smoothly on mobile devices by implementing level-of-detail rendering and texture compression.",
-      },
-    ],
-  },
+  id: "taskflow-pro",
+  title: "TaskFlow Pro",
+  category: "Frontend",
+  description:
+    "A modern and intuitive task management application designed to boost productivity with smart organization, drag-and-drop functionality, and real-time task tracking.",
+  summary:
+    "Built a productivity-focused task manager with dynamic task boards, smooth animations, and an optimized user experience.",
+  image:
+    "https://cdn.dribbble.com/userupload/42520596/file/original-679d884ab5b03ee5931fe1cd72da04ae.png?resize=768x576&vertical=center",
+  techStack: ["React", "JavaScript", "DnD Kit", "Zustand", "Framer Motion"],
+  liveUrl: "https://your-live-link.com",
+  githubUrl: "https://github.com/your-username/taskflow-pro",
+  features: [
+    "Drag-and-drop task organization",
+    "Task priority and labeling system",
+    "Due date tracking with reminders",
+    "Dynamic board and list views",
+    "Real-time UI updates with state management",
+    "Responsive design for all screen sizes",
+  ],
+  challenges: [
+    {
+      title: "Complex Drag-and-Drop Logic",
+      description:
+        "Implemented multi-column drag-and-drop functionality with accurate state synchronization and smooth animations.",
+    },
+    {
+      title: "Scalable State Management",
+      description:
+        "Designed an optimized global state architecture using Zustand to efficiently handle dynamic task updates and UI re-rendering.",
+    },
+  ],
+},
   {
     id: "garajify",
     title: "Garajify",
@@ -178,7 +180,7 @@ export const projects = [
       "Developed Garajify, a full-featured car maintenance application providing service scheduling, vehicle health tracking, and repair management with a seamless user experience.",
 
     image:
-      "https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?w=800&h=500&fit=crop",
+      "https://cdn.dribbble.com/userupload/12558456/file/original-fa26d7598b4062c7fe8066bc0012b594.jpg?resize=1600x1200&vertical=center",
     techStack: ["React", "Node.js", "MySQL", "Express", "JWT Auth", "Firebase"],
     liveUrl: "https://example.com",
     githubUrl: "https://github.com",
