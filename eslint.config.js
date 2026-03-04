@@ -7,13 +7,18 @@ export default [
   {
     ignores: ["dist"],
   },
+  js.configs.recommended,
   {
-    extends: [js.configs.recommended],
     files: ["**/*.{js,jsx}"],
     languageOptions: {
       ecmaVersion: 2020,
       globals: globals.browser,
       sourceType: "module",
+      parserOptions: {
+        ecmaFeatures: {
+          jsx: true,
+        },
+      },
     },
     plugins: {
       "react-hooks": reactHooks,
@@ -21,6 +26,7 @@ export default [
     },
     rules: {
       ...reactHooks.configs.recommended.rules,
+      "no-unused-vars": "off",
       "react-refresh/only-export-components": ["warn", { allowConstantExport: true }],
     },
   },

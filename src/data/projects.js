@@ -78,7 +78,7 @@ export const projects = [
       "Built a portfolio website featuring project showcases, skill highlights, and interactive UI elements to create an engaging presentation of professional achievements.",
     image:
       "https://cdn.dribbble.com/userupload/46100606/file/a6a618fe81690747a0d748d285d8a4de.png?resize=1024x768&vertical=center",
-    techStack: ["React", "CSS Animations", ,],
+    techStack: ["React", "CSS Animations"],
     liveUrl: "https://example.com",
     githubUrl: "https://github.com/nabas444/Natnael-Portfolio",
     features: [
